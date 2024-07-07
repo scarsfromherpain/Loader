@@ -8,6 +8,10 @@ elseif game.PlaceId == 301549746 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/scarsfromherpain/CounterBlox/main/main.lua",true))()
 elseif game.PlaceId == 7305309231 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/scarsfromherpain/taxi-boss/main/ui.lua",true))()
+elseif game.PlaceId == 3351674303 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/scarsfromherpain/Driving-Empire/main/main.lua",true))()
 else
     local notsupported = lib:InitNotifications():Notify("This game isn't supported for Skeet yet. If this game is popular please add in suggestions", 3, "information")
 end
+
+
