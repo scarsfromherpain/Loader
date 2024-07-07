@@ -1,4 +1,3 @@
-
 local games = {
     [13772394625] = "https://github.com/scarsfromherpain/BladeBall/blob/main/loader.lua",
     [4566572536] = "https://raw.githubusercontent.com/scarsfromherpain/Vehicle-Legends/main/main.lua",
