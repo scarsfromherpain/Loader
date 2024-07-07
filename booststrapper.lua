@@ -11,4 +11,3 @@ elseif game.PlaceId == 7305309231 then
 else
     local notsupported = lib:InitNotifications():Notify("This game isn't supported for Skeet yet. If this game is popular please add in suggestions", 3, "information")
 end
-7305309231
