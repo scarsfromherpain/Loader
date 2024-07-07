@@ -1,17 +1,22 @@
-local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Consistt/Ui/main/UnLeaked"))()
 
-if game.PlaceId == 13772394625 then
-    loadstring(game:HttpGet("https://github.com/scarsfromherpain/BladeBall/blob/main/loader.lua",true))()
-elseif game.PlaceId == 4566572536 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/scarsfromherpain/Vehicle-Legends/main/main.lua",true))()
-elseif game.PlaceId == 301549746 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/scarsfromherpain/CounterBlox/main/main.lua",true))()
-elseif game.PlaceId == 7305309231 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/scarsfromherpain/taxi-boss/main/ui.lua",true))()
-elseif game.PlaceId == 3351674303 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/scarsfromherpain/Driving-Empire/main/main.lua",true))()
+local games = {
+    [13772394625] = "https://github.com/scarsfromherpain/BladeBall/blob/main/loader.lua",
+    [4566572536] = "https://raw.githubusercontent.com/scarsfromherpain/Vehicle-Legends/main/main.lua",
+    [301549746] = "https://raw.githubusercontent.com/scarsfromherpain/CounterBlox/main/main.lua",
+    [7305309231] = "https://raw.githubusercontent.com/scarsfromherpain/taxi-boss/main/ui.lua",
+    [3351674303] = "https://raw.githubusercontent.com/scarsfromherpain/Driving-Empire/main/main.lua",
+}
+
+if games[game.CreatorId] then
+    loadstring(game:HttpGet(games[game.CreatorId]))()
 else
-    local notsupported = lib:InitNotifications():Notify("This game isn't supported for Skeet yet. If this game is popular please add in suggestions", 3, "information")
+    print("Game not supported")
 end
 
-
+--anti afk kick
+local vu = cloneref(game:GetService("VirtualUser"))
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   wait(1)
+   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
